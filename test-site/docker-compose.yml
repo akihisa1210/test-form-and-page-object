@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build: ./web
+    volumes: 
+      - ./web/public:/var/www/html
+    ports:
+      - 8080:80
+  db:
+    image: mysql:8.0.22
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    # DBO in PHP7.3 doesn't support "caching_sha2_password"
+    command: mysqld --default-authentication-plugin=mysql_native_password
