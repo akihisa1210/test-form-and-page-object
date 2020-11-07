@@ -1,0 +1,9 @@
+CREATE DATABASE test;
+USE test
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  notes TEXT,
+  PRIMARY KEY (id)
+);
