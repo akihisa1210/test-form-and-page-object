@@ -22,7 +22,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $dbh = null;
 
-echo "<table>\n";
+echo "<table id='users'>\n";
 
 echo "<tr>\n";
 echo "<th>ID</th><th>Name</th><th>Notes</th>\n";
